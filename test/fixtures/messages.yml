@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  who: MyString
+  when: MyString
+  deadline: MyString
+  content: MyString
+  attach_link: MyString
+  action: MyString
+  to: MyString
+  cc: MyString
+  bcc: MyString
+  user_id: MyString
+
+two:
+  who: MyString
+  when: MyString
+  deadline: MyString
+  content: MyString
+  attach_link: MyString
+  action: MyString
+  to: MyString
+  cc: MyString
+  bcc: MyString
+  user_id: MyString

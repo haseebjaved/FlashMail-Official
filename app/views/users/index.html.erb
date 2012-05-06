@@ -1,0 +1,19 @@
+<h1>List of all current users</h1>
+
+	<div class="users"><ol>
+	<% @users.each do |user| %>
+		<li><b>Name:</b> <%= link_to user.name, show_user_url(user.id) %> <b>Username:</b> <%= user[:username] %> <b> Password: </b> <%= user[:password] %> 
+			
+			| 
+			
+		<%= link_to "Edit", edit_user_url(user.id) %>
+			
+			| 
+			
+		<%= link_to "Delete", show_user_url(user.id), :method => :delete, :confirm => "Are you sure?" %></li>
+		
+	<%end%></ol></div>
+<br><br>
+
+<%= link_to "Signup!", new_user_url %>
+<h3><%=link_to "New Message", "http://localhost:3000/message/new"%></h3>

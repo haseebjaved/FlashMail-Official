@@ -1,0 +1,61 @@
+<head>
+	<title>FlashMail - New User SignUp</title>
+	<%= stylesheet_link_tag    "login", media: "all" %>
+</head>
+
+<header><a href="http://localhost:3000/signin" title="Sign In">sign me in!</a></header><br><br>
+
+<h1><strong><em>F</strong></em>lash<strong><em>M</strong></em>ail</h1><br><br>
+
+<h3>New Message</h3>
+
+<%= form_for @message do |m| %>
+	<%= m.label :who, "Who"%>
+	<%= m.text_field :who %><br>
+	<%= m.label :when, "When"%>
+	<%= m.text_field :when %><br>
+	<%= m.label :deadline, "Deadline"%>
+	<%= m.text_field :deadline %><br>
+	<%= m.label :content, "Content"%>
+	<%= m.text_field :content %><br>
+	<%= m.label :attach_link, "Attach./Link"%>
+	<%= m.text_field :attach_link %><br>
+	<%= m.label :action, "Action"%>
+	<%= m.text_field :action %><br>
+	<%= m.label :to, "To"%>
+	<%= m.text_field :to %><br>
+	<%= m.label :cc, "Cc"%>
+	<%= m.text_field :cc %><br>
+	<%= m.label :bcc, "Bcc"%>
+	<%= m.text_field :bcc %><br>
+	<%= m.label :user_id, "User ID"%>
+	<%= m.text_field :user_id %><br>
+	<%= m.submit "Send"%>
+<%end%>
+
+
+<!-- <%= form_tag "http://localhost:3000/messages" do %>
+	<%= label_tag "Who" %>
+	<%= text_field_tag "who" %><br>
+	<%= label_tag "When" %>
+	<%= text_field_tag "when" %><br>
+	<%= label_tag "Deadline" %>
+	<%= text_field_tag "deadline" %><br>
+	<%= label_tag "Content" %>
+	<%= text_field_tag "content" %><br>
+	<%= label_tag "Attach./Link" %>
+	<%= text_field_tag "attach_link" %><br>
+	<%= label_tag "Action" %>
+	<%= text_field_tag "action" %><br>
+	<%= label_tag "To" %>
+	<%= text_field_tag "to" %><br>
+	<%= label_tag "Cc" %>
+	<%= text_field_tag "cc" %><br>
+	<%= label_tag "Bcc" %>
+	<%= text_field_tag "bcc" %><br>
+	<%= label_tag "User ID" %>
+	<%= text_field_tag "user_id" %><br>
+	<%= submit_tag "Send"%>
+	
+<%end%> -->
+

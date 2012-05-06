@@ -1,0 +1,71 @@
+body {
+	background: #6495ed;
+}
+
+header {
+	color: blue;
+	font-size: 15px;
+	position: relative;
+}
+
+h1 {
+	color: red;
+	font-size: 50px;
+	background: white;
+	position: absolute;
+	top: 10px;
+	left: 38%;
+	padding: 10px;
+	border-top: 5px ridge pink;
+	border-bottom: 5px ridge pink;
+}
+
+form {
+	position: absolute;
+	left: 20%;
+	top: 33%;
+	width: 25%;
+	text-align: right;
+	background: pink;
+	color: blue;
+	padding: 10px;
+	border: 2px ridge blue;
+	
+}
+
+ul {
+	color: blue;
+	font-size: 20px;
+	background: pink;
+	position: absolute;
+	width: 35%;
+	right:15%;
+	top: 30%;
+	padding: 5px;
+	border: 2px ridge blue;
+}
+
+.users {
+	background: pink;
+	position: absolute;
+	top: 30%;
+	left: 10%;
+	padding-right: 15px;
+	border: 2px ridge blue
+}
+
+h2 {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.user {
+	background: pink;
+	position: absolute;
+	top: 20%;
+	left: 10%;
+	padding: 50px;
+	border: 2px ridge blue;
+	color: gray;
+}

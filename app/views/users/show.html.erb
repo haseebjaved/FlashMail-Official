@@ -1,0 +1,28 @@
+<h1>User</h1>
+
+<h3><%=link_to "New Message", new_message_url %></h3>
+
+<div class="user">
+	Name: <%= @user.name%> <br><br> Username: <%= @user.username%> <br><br> Password: <%= @user.password%><br><br>User ID: <%=@user.id%>
+	
+	<h4>Messages</h4>
+	
+	<% @user_messages.each do |message| %>
+	Deadline: <%= message.deadline %> <br> Action: <%= message.action %> <br> Cc: <%=message.cc%> <br> Content: <%= message.content %> <br><!-- <%= link_to "Delete Message", "http://localhost:3000/users/#{@user.id}", :method => :delete, :confirm => "Are you sure?" %><br> --><br>
+	<%end%><br><br>
+	
+<%= link_to "Edit", edit_user_url(@user.id) %>
+
+| 
+
+<%= link_to "Back", users_url %>
+
+|
+
+<%= link_to "Delete User", show_user_url(@user.id), :method => :delete, :confirm => "Are you sure?" %>
+
+|
+
+<%= link_to "Refresh", show_user_url(@user.id)%>
+
+</div>

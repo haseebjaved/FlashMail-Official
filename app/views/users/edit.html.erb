@@ -1,0 +1,18 @@
+<h1>Edit User</h1>
+
+<%= form_for @user do |u| %>
+	<%= u.label :name, "Name" %>
+	<%= u.text_field :name %><br>
+	<%= u.label :username, "Username" %>
+	<%= u.text_field :username %><br>
+	<%= u.label :password, "Password" %>
+	<%= u.text_field :password %><br>
+	<%= u.label :password_confirmation, "Password Confirmation" %>
+	<%= u.text_field :password_confirmation %><br>
+	
+	<%= u.submit "Update User" %>
+<% end  %>
+	
+	|
+	
+	<%= link_to "Back", users_url %>
