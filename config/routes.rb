@@ -1,13 +1,14 @@
 FlashMail::Application.routes.draw do
   
   get "/", :controller => "sessions", :action => "signin"
+  
   get "users", :controller => "users", :action => "index", :as => "users"
   post "users", :controller => "users", :action => "create"
-  get "signup", :controller => "users", :action => "new", :as => "new_user"
   
+  get "signup", :controller => "users", :action => "new", :as => "new_user"
   get "users/:id/edit", :controller => "users", :action => "edit", :as => "edit_user"
   
-  get "users/:id", :controller => "users", :action => "show", :as => "show_user"
+  get "users/:id", :controller => "users", :action => "show", :as => "user"
   put "users/:id", :controller => "users", :action => "update"
   delete "users/:id", :controller => "users", :action => "delete"
   

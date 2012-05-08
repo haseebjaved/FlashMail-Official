@@ -1,0 +1,13 @@
+<%= form_for @user do |form| %>
+	<%= form.label :name, "Name"%>
+	<%= form.text_field :name %><br>
+	<%= form.label :username, "Username" %>
+	<%= form.text_field :username %><br>
+	<%= form.label :password, "Password" %>
+	<%= form.text_field :password %><br>
+	<%= form.label :password_confirmation, "Password Confirmation" %>
+	<%= form.text_field :password_confirmation %><br>
+	
+	<%= form.submit "I want my FlashMail!"%>
+	
+<% end  %>

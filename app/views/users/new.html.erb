@@ -5,20 +5,9 @@
 
 <header><a href="http://localhost:3000/signin" title="Sign In">sign me in!</a></header><br>
 
-<h1><em>F</em>lash<em>M</em>ail</h1><br>
+<p class="alert"><%= flash[:alert] %></p>
 
-	<%= form_for @user do |user| %>
-		<%= user.label :name, "Name"%>
-		<%= user.text_field :name %><br>
-		<%= user.label :username, "Username" %>
-		<%= user.text_field :username %><br>
-		<%= user.label :password, "Password" %>
-		<%= user.text_field :password %><br>
-		<%= user.label :password_confirmation, "Password Confirmation" %>
-		<%= user.text_field :password_confirmation %><br>
-		
-		<%= user.submit "I want my FlashMail!"%>
-	<% end  %>
+	<%= render "form" %>
 		
 		<ul>
 			<p>Send and receive fast, concise, safe, and prioritized mail</p>

@@ -1,5 +1,5 @@
 body {
-	background: #6495ed;
+	background: #87CEFA;
 }
 
 header {
@@ -11,13 +11,11 @@ header {
 h1 {
 	color: red;
 	font-size: 50px;
-	background: white;
-	position: absolute;
+	background: #FFE4E1;
+/*	position: absolute;*/
 	top: 10px;
-	left: 38%;
+	float: center;
 	padding: 10px;
-	border-top: 5px ridge pink;
-	border-bottom: 5px ridge pink;
 }
 
 form {
@@ -26,7 +24,7 @@ form {
 	top: 33%;
 	width: 25%;
 	text-align: right;
-	background: pink;
+	background: #FFE4E1;
 	color: blue;
 	padding: 10px;
 	border: 2px ridge blue;
@@ -36,7 +34,7 @@ form {
 ul {
 	color: blue;
 	font-size: 20px;
-	background: pink;
+	background: #FFE4E1;
 	position: absolute;
 	width: 35%;
 	right:15%;
@@ -46,8 +44,9 @@ ul {
 }
 
 .users {
-	background: pink;
-	position: absolute;
+	background: #FFE4E1;
+/*	position: absolute;*/
+	float: left;
 	top: 30%;
 	left: 10%;
 	padding-right: 15px;
@@ -56,16 +55,29 @@ ul {
 
 h2 {
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 15%;
+	color: red;
+	
 }
 
 .user {
-	background: pink;
+	background: #FFE4E1;
 	position: absolute;
-	top: 20%;
+	top: 30%;
 	left: 10%;
 	padding: 50px;
 	border: 2px ridge blue;
 	color: gray;
+}
+
+.notice {
+	color: green;
+	background: white;
+	margin-right: 90%;
+}
+
+.alert {
+	color: red;
+	background: white;
+	margin-right: 90%;
 }
