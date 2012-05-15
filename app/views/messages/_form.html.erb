@@ -1,0 +1,24 @@
+<%= form_for @message do |m| %>
+	<%= m.label :who, "Who"%>
+	<%= m.text_field :who %><br>
+	<%= m.label :when, "When"%>
+	<%= m.text_field :when %><br>
+	<%= m.label :deadline, "Deadline"%>
+	<%= m.text_field :deadline, placeholder: "Deadline" %><br>
+	<%= m.label :content, "Content"%>
+	<%= m.text_area :content, size: "30x5", placeholder: "Content" %><br>
+	<%= m.label :attach_link, "Attach./Link"%>
+	<%= m.text_field :attach_link %><br>
+	<%= m.label :action, "Action"%>
+	<%= m.text_field :action, placeholder: "Action" %><br>
+	<%= m.label :to, "To"%>
+	<%= m.text_field :to, placeholder: "To" %><br>
+	<%= m.label :cc, "Cc"%>
+	<%= m.text_field :cc, placeholder: "Cc" %><br>
+	<%= m.label :bcc, "Bcc"%>
+	<%= m.text_field :bcc, placeholder: "Bcc" %><br>
+	<%= m.submit "Send"%>
+<%end%>
+
+
+<%= link_to "Back", :back%>

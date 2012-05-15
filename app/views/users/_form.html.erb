@@ -1,13 +1,15 @@
 <%= form_for @user do |form| %>
 	<%= form.label :name, "Name"%>
-	<%= form.text_field :name %><br>
+	<%= form.text_field :name, :placeholder => "Enter Name" %><br>
 	<%= form.label :username, "Username" %>
-	<%= form.text_field :username %><br>
+	<%= form.text_field :username, placeholder: "Enter Username" %><br>
 	<%= form.label :password, "Password" %>
-	<%= form.text_field :password %><br>
+	<%= form.text_field :password, placeholder: "Enter Password" %><br>
 	<%= form.label :password_confirmation, "Password Confirmation" %>
-	<%= form.text_field :password_confirmation %><br>
+	<%= form.text_field :password_confirmation, placeholder: "Confirm Password" %><br><br>
 	
 	<%= form.submit "I want my FlashMail!"%>
+	
+	<%= link_to 'Cancel', :back %>
 	
 <% end  %>

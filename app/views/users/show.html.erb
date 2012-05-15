@@ -1,28 +1,50 @@
-<h2>User Page</h2>
+<h2><%=@user.name%>'s Page</h2>
 
 <h3><%=link_to "New Message", new_message_url %></h3>
 
 <div class="user">
-	Name: <%= @user.name%> <br><br> Username: <%= @user.username%> <br><br> Password: <%= @user.password%><br><br>User ID: <%=@user.id%>
 	
 	<h4>Messages</h4>
 	
-	<% @user_messages.each do |message| %>
-	Deadline: <%= message.deadline %> <br> Action: <%= message.action %> <br> Cc: <%=message.cc%> <br> Content: <%= message.content %> <br><!-- <%= link_to "Delete Message", "http://localhost:3000/users/#{@user.id}", :method => :delete, :confirm => "Are you sure?" %><br> --><br>
-	<%end%><br><br>
+	<nav>	
+	<%= link_to "Edit", edit_user_url(@user.id) %>
+	| 
+	<%= link_to "Back", users_url %>
+	|
+	<%= link_to "Delete User", user_url(@user.id), :method => :delete,		:confirm => "Are you sure?" %>
+	|
+	<%= link_to "Refresh", user_url(@user.id)%>
+	</nav><br><br>
 	
-<%= link_to "Edit", edit_user_url(@user.id) %>
-
-| 
-
-<%= link_to "Back", users_url %>
-
-|
-
-<%= link_to "Delete User", show_user_url(@user.id), :method => :delete, :confirm => "Are you sure?" %>
-
-|
-
-<%= link_to "Refresh", show_user_url(@user.id)%>
+	<div class="creationtime">Created At<br><br>
+		<% @user_messages.each do |message| %>
+		<%= time_ago_in_words(message.created_at) %><br>
+		<%end%><br>
+	</div>
+	
+	<div class="action">Action<br><br>
+		<% @user_messages.each do |message| %>
+		<%= message.action %><br>
+		<%end%><br>
+	</div>
+	
+	<div class="deadline">Deadline<br><br>
+		<% @user_messages.each do |message| %>
+		<%= message.deadline %><br>
+		<%end%><br>
+	</div>
+	
+	<div class="content">Content<br><br>
+	<% @user_messages.each do |message| %>
+	<%= link_to "Content", message_url(message.id) %>
+	
+		<%end%><br>
+	</div><br>
+	
+	<div class="deletemsg"><br><br>
+		<% @user_messages.each do |message| %>
+		<%= link_to "Delete Message", message_url(message.id), :method => :delete, :confirm => "Are you sure?" %>
+		<%end%><br>
+	</div><br>
 
 </div>

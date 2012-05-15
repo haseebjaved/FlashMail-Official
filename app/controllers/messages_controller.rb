@@ -9,30 +9,35 @@ class MessagesController < ApplicationController
   
   def create
     
-    @message = Message.new :to => params[:message]["to"], 
-                          :user_id => params[:message]["user_id"],
-                          :action => params[:message]["action"],
-                          :deadline => params[:message]["deadline"],
-                          :content => params[:message]["content"]
+    @message = Message.new(params[:message])
+    
+    # :to => params[:message]["to"], 
+    #                           :user_id => params[:message]["user_id"],
+    #                           :action => params[:message]["action"],
+    #                           :deadline => params[:message]["deadline"],
+    #                           :content => params[:message]["content"]
+    
+    # temp_msg = Message.find_by_to(params[:to])
+    
+    @user = User.find_by_username(@message.to) 
+    
+    # || User.find_by_username(@message.cc) || User.find_by_username(@message.bcc)
+    
+    @message.user_id = @user.id
+    
     @message.save
     
-    u_id = @message.user_id
+    # u_id = @message.user_id
     
-    redirect_to show_user_url(u_id)
+    redirect_to user_url(@user.id)
     
   end
   
   def show
     
-    #new
+    @message = Message.find_by_id(params[:id])
     
-    #open
-    
-    #reply
-    
-    #reply_all
-    
-    #forward
+    @u_id = @message.user_id
   
   end
   
@@ -44,7 +49,16 @@ class MessagesController < ApplicationController
     
   end
 
-  def delete
+  def destroy
+      
+      @message = Message.find_by_id(params[:id])
+      
+      u = User.find_by_id(@message.user_id) 
+      
+      @message.destroy
+      
+      redirect_to user_url(u.id)
+      
   end
   
   def later

@@ -6,19 +6,20 @@ class UsersController < ApplicationController
   
   def create
     
-   @user = User.new  :name => params[:user]["name"], 
-                     :username => params[:user]["username"],
-                     :password => params[:user]["password"], 
-                     :password_confirmation => params[:user]["password_confirmation"]
-     
+   @user = User.new(params[:user])
+                     # :name => params[:user]["name"], 
+                     #                      :username => params[:user]["username"],
+                     #                      :password => params[:user]["password"], 
+                     #                      :password_confirmation => params[:user]["password_confirmation"]
+                          
     if @user.save
       flash[:notice] = "New User Created!!"
       
       # session[:user_id] = new_user.id
-      redirect_to users_url
+      redirect_to user_url(@user.id)
     
     else
-      flash[:alert] = "Missing field!!"
+      # flash[:alert] = "Missing field!"
       render "new"
     end
   
@@ -59,18 +60,20 @@ class UsersController < ApplicationController
   def update
     
     @user = User.find_by_id(params[:id])
+    # @user = params[:user]
+    
     @user.name = params[:user][:name]
     @user.username = params[:user][:username]
     @user.password = params[:user][:password]
     @user.password_confirmation = params[:user][:password_confirmation]
-   
+       
     @user.save
     
     redirect_to users_url
     
   end
   
-  def delete
+  def destroy
     
     @user = User.find_by_id(params[:id])
     @user.destroy

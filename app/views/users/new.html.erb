@@ -7,6 +7,13 @@
 
 <p class="alert"><%= flash[:alert] %></p>
 
+<div class="errors">
+<% @user.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+<% end %>
+</div>
+
+
 	<%= render "form" %>
 		
 		<ul>
