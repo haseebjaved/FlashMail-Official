@@ -13,7 +13,7 @@ class UsersController < ApplicationController
                      #                      :password_confirmation => params[:user]["password_confirmation"]
                           
     if @user.save
-      flash[:notice] = "New User Created!!"
+      flash[:notice] = "Welcome to FlashMail!"
       
       # session[:user_id] = new_user.id
       redirect_to user_url(@user.id)

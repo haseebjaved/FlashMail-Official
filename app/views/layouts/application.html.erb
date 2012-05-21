@@ -8,7 +8,20 @@
 </head>
 <body>
 	
+<div id="header">	
 <h1>FlashMail</h1><br>
+<% if @user %>
+<p>Logged in as: <%= @user.name%></p>
+<p><%= link_to "Logout", logout_url%>
+<%else%>
+<%= link_to "Login", new_login_url%>
+<%end%>
+</div>
+
+<% if flash[:notice]%>
+  <p style="color: green">
+  <%= flash[:notice]%></p>
+  <%end%>
 
 <%= yield %>
 

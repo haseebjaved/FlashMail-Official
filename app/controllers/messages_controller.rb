@@ -27,9 +27,20 @@ class MessagesController < ApplicationController
     
     @message.save
     
+    if @message.save
+      flash[:notice] = "New Message Created!!"
+      
+      # session[:user_id] = new_user.id
+      redirect_to user_url(@user.id)
+    
+    else
+      # flash[:alert] = "Missing field!"
+      render "new_message"
+    end
+    
     # u_id = @message.user_id
     
-    redirect_to user_url(@user.id)
+    # redirect_to user_url(@user.id)
     
   end
   

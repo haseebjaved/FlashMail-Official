@@ -1,5 +1,7 @@
 <h2><%=@user.name%>'s Page</h2>
 
+# <p class="notice"><%= flash[:notice] %></p>
+
 <h3><%=link_to "New Message", new_message_url %></h3>
 
 <div class="user">

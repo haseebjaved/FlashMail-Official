@@ -4,12 +4,20 @@
 	<%= form.label :username, "Username" %>
 	<%= form.text_field :username, placeholder: "Enter Username" %><br>
 	<%= form.label :password, "Password" %>
-	<%= form.text_field :password, placeholder: "Enter Password" %><br>
+	<%= form.password_field :password, placeholder: "Enter Password" %><br>
 	<%= form.label :password_confirmation, "Password Confirmation" %>
-	<%= form.text_field :password_confirmation, placeholder: "Confirm Password" %><br><br>
+	<%= form.password_field :password_confirmation, placeholder: "Confirm Password" %><br><br>
 	
-	<%= form.submit "I want my FlashMail!"%>
+	<%= form.submit "Enter"%> or |
 	
-	<%= link_to 'Cancel', :back %>
+	<% if params[:action] == "new" %>
 	
-<% end  %>
+	<%= link_to 'Cancel', new_user_url %>
+	
+	<% else%>
+
+	<%= link_to 'Back', :back %>
+	
+	<% end  %>
+
+<%end%>

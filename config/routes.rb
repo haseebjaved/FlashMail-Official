@@ -2,8 +2,13 @@ FlashMail::Application.routes.draw do
   
   # get "/", :controller => "sessions", :action => "signin"
   
-  root to: "users#new"
-  
+    root to: "logins#new"
+      
+    get "logins/new", as: :new_login
+    post "logins/create", as: :logins
+    
+    get "logout" => 'logins#destroy', as: :logout
+    
   resources :users
   
   # get "users", :controller => "users", :action => "index", :as => "users"
