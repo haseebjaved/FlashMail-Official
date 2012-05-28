@@ -9,6 +9,8 @@ class MessagesController < ApplicationController
   
   def create
     
+    message_sender = @user
+    
     @message = Message.new(params[:message])
     
     # :to => params[:message]["to"], 
@@ -27,8 +29,10 @@ class MessagesController < ApplicationController
     
     @message.save
     
+    @user = message_sender
+    
     if @message.save
-      flash[:notice] = "New Message Created!!"
+      flash[:notice] = "New Message Created"
       
       # session[:user_id] = new_user.id
       redirect_to user_url(@user.id)

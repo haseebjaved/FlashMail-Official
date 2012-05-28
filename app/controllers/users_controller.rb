@@ -40,16 +40,22 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find_by_id(params[:id])
+    if session[:login_id].blank?
+      redirect_to new_login_url, notice: "Not Logged In"
+    else    
+      @user = User.find_by_id(session[:login_id])
     
     # @user_messages = Message.find_all_by_user_name(params[:username])
     
 #add migration to Message model to add :username and then try the above instead of the below
     # 
-    @user_messages = Message.find_all_by_user_id(params[:id])
+    
+    #@user_messages = @user.messages        
+    @user_messages = @user.messages.sort_by(&:created_at).reverse
+    # @user_messages = Message.find_all_by_user_id(params[:id])
     
     # @user_messages = Message.find_all_by_to(params[:name])    
-      
+    end
   end
   
   def edit

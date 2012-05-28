@@ -1,52 +1,42 @@
 <h2><%=@user.name%>'s Page</h2>
 
-# <p class="notice"><%= flash[:notice] %></p>
-
-<h3><%=link_to "New Message", new_message_url %></h3>
-
 <div class="user">
 	
 	<h4>Messages</h4>
 	
 	<nav>	
-	<%= link_to "Edit", edit_user_url(@user.id) %>
+	<%= link_to "Edit User", edit_user_url(@user.id) %>
 	| 
 	<%= link_to "Back", users_url %>
 	|
 	<%= link_to "Delete User", user_url(@user.id), :method => :delete,		:confirm => "Are you sure?" %>
 	|
 	<%= link_to "Refresh", user_url(@user.id)%>
+	|
+	<%=link_to "New Message", new_message_url %>
 	</nav><br><br>
 	
-	<div class="creationtime">Created At<br><br>
-		<% @user_messages.each do |message| %>
-		<%= time_ago_in_words(message.created_at) %><br>
-		<%end%><br>
-	</div>
-	
-	<div class="action">Action<br><br>
-		<% @user_messages.each do |message| %>
-		<%= message.action %><br>
-		<%end%><br>
-	</div>
-	
-	<div class="deadline">Deadline<br><br>
-		<% @user_messages.each do |message| %>
-		<%= message.deadline %><br>
-		<%end%><br>
-	</div>
-	
-	<div class="content">Content<br><br>
-	<% @user_messages.each do |message| %>
-	<%= link_to "Content", message_url(message.id) %>
-	
-		<%end%><br>
-	</div><br>
-	
-	<div class="deletemsg"><br><br>
-		<% @user_messages.each do |message| %>
-		<%= link_to "Delete Message", message_url(message.id), :method => :delete, :confirm => "Are you sure?" %>
-		<%end%><br>
-	</div><br>
-
+	<table>
+		<thead>
+			<tr>
+				<th>Created At</th>
+				<th>Action</th>
+				<th>Deadline</th>
+				<th>Content</th>
+				<th>Delete Msg</th>
+			</tr>
+		</thead>
+		<tbody>
+			<%@user_messages.each do |message| %>
+			<tr>
+				<td><%=time_ago_in_words(message.created_at)%></td>
+				<td><%=message.action%></td>
+				<td><%=message.deadline%></td>
+				<td><%=link_to "Content", message_url(message.id)%></td>
+				<td><%=link_to "Delete Message", message_url(message.id), 
+					:method => :delete, :confirm => "Are you sure?"%></td>
+			</tr>
+			<%end%>
+		</tbody>
+	</table>
 </div>
