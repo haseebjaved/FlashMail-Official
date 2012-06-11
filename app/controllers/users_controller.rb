@@ -52,7 +52,7 @@ class UsersController < ApplicationController
     
     #@user_messages = @user.messages        
     # @user_messages = @user.messages.sort_by(&:created_at).reverse
-    @user_message = @user.messages.order('created_at desc')
+    @user_messages = @user.messages.order('created_at desc')
     # @user_messages = Message.find_all_by_user_id(params[:id])
     
     # @user_messages = Message.find_all_by_to(params[:name])    
