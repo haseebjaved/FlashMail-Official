@@ -10,7 +10,8 @@ class CreateMessages < ActiveRecord::Migration
       t.string :to
       t.string :cc
       t.string :bcc
-      t.string :user_id
+      t.integer :user_id
+      t.string :username
 
       t.timestamps
     end

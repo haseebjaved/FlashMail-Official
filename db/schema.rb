@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120611233950) do
+ActiveRecord::Schema.define(:version => 20120521221857) do
 
   create_table "messages", :force => true do |t|
     t.string   "who"
@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(:version => 20120611233950) do
     t.string   "name"
     t.string   "username"
     t.string   "password_confirmation"
+    t.string   "password_digest"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
-    t.string   "password_digest"
   end
 
 end
