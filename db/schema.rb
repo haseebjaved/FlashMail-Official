@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120611231530) do
+ActiveRecord::Schema.define(:version => 20120611233950) do
 
   create_table "messages", :force => true do |t|
     t.string   "who"
@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(:version => 20120611231530) do
     t.string   "to"
     t.string   "cc"
     t.string   "bcc"
-    t.integer  "user_id",     :limit => 255
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.integer  "user_id"
     t.string   "username"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|
