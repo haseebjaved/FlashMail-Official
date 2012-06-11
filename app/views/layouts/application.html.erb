@@ -10,11 +10,12 @@
 	
 <div id="header">	
 <h1>FlashMail</h1><br>
-<% if @user %>
+<% if session[:login_id] %>
 <p>Logged in as: <%= @user.name%></p>
 <p><%= link_to "Logout", logout_url%>
 <%else%>
-<%= link_to "Login", new_login_url%>
+<%= link_to "Login", new_login_url%> |  
+<%= link_to "Signup", new_user_url%>
 <%end%>
 </div>
 
